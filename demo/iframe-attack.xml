@@ -16,7 +16,7 @@
 <body>
 <link rel="import" href="./bower_components/polymer/polymer.html"/>
 <script>
-  document.addEventListener('WebComponentsReady', function() {
+  window.run = function() {
     var FooBar = Polymer({
       is: 'foo-bar',
 
@@ -33,7 +33,7 @@
 
     var first = document.body.firstChild;
     document.body.insertBefore(el2, first);
-  });
+  };
 </script>
 </body>
 </html>
