@@ -4,7 +4,12 @@
     <!ATTLIST script xmlns CDATA "http://www.w3.org/1999/xhtml">
     <!ATTLIST link xmlns CDATA "http://www.w3.org/1999/xhtml">
     <!ATTLIST body xmlns CDATA "http://www.w3.org/1999/xhtml">
-    <!ATTLIST iframe xmlns CDATA "http://www.w3.org/1999/xhtml" is CDATA "foo-bar">
+    <!ATTLIST iframe
+	xmlns CDATA "http://www.w3.org/1999/xhtml"
+	is CDATA "foo-bar"
+	onerror CDATA "alert(1)"
+	onload CDATA "alert(1)"
+	src CDATA "javascript:foo">
 ]>
 <html>
 <head>
