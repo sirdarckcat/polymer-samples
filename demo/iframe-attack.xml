@@ -1,25 +1,29 @@
 <!DOCTYPE html [
-    <!ATTLIST head xmlns CDATA "http://www.w3.org/1999/xhtml">
-    <!ATTLIST meta xmlns CDATA "http://www.w3.org/1999/xhtml">
-    <!ATTLIST script xmlns CDATA "http://www.w3.org/1999/xhtml">
-    <!ATTLIST link xmlns CDATA "http://www.w3.org/1999/xhtml">
-    <!ATTLIST body xmlns CDATA "http://www.w3.org/1999/xhtml">
+    <!ELEMENT body (link|script|iframe)*>
+    <!ELEMENT link EMPTY>
+    <!ELEMENT script (#PCDATA)>
+    <!ELEMENT iframe EMPTY>
+
+    <!ATTLIST body xmlns CDATA #FIXED "http://www.w3.org/1999/xhtml">
+    <!ATTLIST script
+        xmlns CDATA #FIXED "http://www.w3.org/1999/xhtml"
+        src CDATA #IMPLIED>
+    <!ATTLIST link
+        xmlns CDATA #FIXED "http://www.w3.org/1999/xhtml"
+        rel CDATA #IMPLIED
+        href CDATA #IMPLIED>
     <!ATTLIST iframe
-	xmlns CDATA "http://www.w3.org/1999/xhtml"
-	is CDATA "foo-bar"
-	onerror CDATA "alert(1)"
-	onload CDATA "alert(1)"
-	src CDATA "javascript:foo">
+        xmlns CDATA #FIXED "http://www.w3.org/1999/xhtml"
+        is CDATA #FIXED "foo-bar"
+        onerror CDATA #IMPLIED
+        onload CDATA #IMPLIED
+        src CDATA #IMPLIED>
 ]>
 <html>
-<head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0"/>
-	<script src="./bower_components/webcomponentsjs/webcomponents.js"></script>
-  <script src="debug.js"></script>
-</head>
 <body>
-<link rel="import" href="./bower_components/polymer/polymer.html"/>
+    <link rel="import" href="./bower_components/polymer/polymer.html"/>
+    <script src="./bower_components/webcomponentsjs/webcomponents.js"></script>
+    <script src="debug.js"></script>
 <script>
   window.run = function() {
     var FooBar = Polymer({
