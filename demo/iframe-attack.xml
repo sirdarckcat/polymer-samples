@@ -7,6 +7,7 @@
     <!ELEMENT style (#PCDATA)>
     <!ELEMENT iframe EMPTY>
 
+    <!ATTLIST html xmlns CDATA #FIXED "http://www.w3.org/1999/xhtml">
     <!ATTLIST head xmlns CDATA #FIXED "http://www.w3.org/1999/xhtml">
     <!ATTLIST body xmlns CDATA #FIXED "http://www.w3.org/1999/xhtml">
     <!ATTLIST script
