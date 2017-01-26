@@ -28,11 +28,11 @@
       }
     });
 
-    var el2 = document.createElement('iframe', 'foo-bar');
-    console.log(el2 instanceof HTMLIFrameElement); // true
+    var el1 = document.createElement('iframe');
+    console.log("el1 is iframe", el1 instanceof HTMLIFrameElement);
 
-    var first = document.body.firstChild;
-    document.body.insertBefore(el2, first);
+    var el2 = document.createElement('iframe', 'foo-bar');
+    console.log("el2 is iframe", el2 instanceof HTMLIFrameElement);
   };
 </script>
 </body>
