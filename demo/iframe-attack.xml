@@ -12,9 +12,9 @@
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0"/>
 	<script src="./bower_components/webcomponentsjs/webcomponents.js"></script>
   <script src="debug.js"></script>
-	<link rel="import" href="./bower_components/polymer/polymer.html"/>
 </head>
 <body>
+<link rel="import" href="./bower_components/polymer/polymer.html"/>
 <script>
   document.addEventListener('WebComponentsReady', function() {
     var FooBar = Polymer({
