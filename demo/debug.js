@@ -6,12 +6,12 @@
     var redirectUrl = baseUrl + location.href.split('/').pop();
 
     debugMenu.innerHTML = [
-      '<hr>',
+      '<hr/>',
       '<div>',
       '<sub><a target="blank" href="' + redirectUrl + '">Go to source at github</a></sub>',
       '</div>'
     ].join('\n');
-    document.body.appendChild(debugMenu);
+    document.documentElement.appendChild(debugMenu);
   }
 
   this.showSource = function() {
