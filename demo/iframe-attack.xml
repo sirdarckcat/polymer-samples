@@ -1,5 +1,7 @@
 <!DOCTYPE html [
-    <!ELEMENT body (link|script|iframe)*>
+    <!ELEMENT body (script|iframe)*>
+    <!ELEMENT head (link|script)*>
+
     <!ELEMENT link EMPTY>
     <!ELEMENT script (#PCDATA)>
     <!ELEMENT iframe EMPTY>
@@ -20,29 +22,31 @@
         src CDATA #IMPLIED>
 ]>
 <html>
-<body>
-    <link rel="import" href="./bower_components/polymer/polymer.html"/>
-    <script src="./bower_components/webcomponentsjs/webcomponents.js"></script>
-    <script src="debug.js"></script>
-<script>
-  window.run = function() {
-    var FooBar = Polymer({
-      is: 'foo-bar',
+    <head>
+        <link rel="import" href="./bower_components/polymer/polymer.html"/>
+        <script src="./bower_components/webcomponentsjs/webcomponents.js"></script>
+        <script src="debug.js"></script>
+    </head>
+    <body>
+        <script>
+          window.run = function() {
+            var FooBar = Polymer({
+              is: 'foo-bar',
 
-      extends: 'iframe',
+              extends: 'iframe',
 
-      created: function() {
-        console.log("busted", this);
-        debugger;
-      }
-    });
+              created: function() {
+                console.log("busted", this);
+                debugger;
+              }
+            });
 
-    var el1 = document.createElement('iframe');
-    console.log("el1 is iframe", el1 instanceof HTMLIFrameElement);
+            var el1 = document.createElement('iframe');
+            console.log("el1 is iframe", el1 instanceof HTMLIFrameElement);
 
-    var el2 = document.createElement('iframe', 'foo-bar');
-    console.log("el2 is iframe", el2 instanceof HTMLIFrameElement);
-  };
-</script>
-</body>
+            var el2 = document.createElement('iframe', 'foo-bar');
+            console.log("el2 is iframe", el2 instanceof HTMLIFrameElement);
+          };
+        </script>
+    </body>
 </html>
