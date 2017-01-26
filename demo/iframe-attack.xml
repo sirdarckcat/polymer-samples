@@ -1,11 +1,12 @@
 <!DOCTYPE html [
-    <!ELEMENT body (script|iframe)*>
+    <!ELEMENT body (script|iframe|canvas)*>
     <!ELEMENT head (link|style|script)*>
 
     <!ELEMENT link EMPTY>
     <!ELEMENT script (#PCDATA)>
     <!ELEMENT style (#PCDATA)>
     <!ELEMENT iframe EMPTY>
+    <!ELEMENT canvas EMPTY>
 
     <!ATTLIST html xmlns CDATA #FIXED "http://www.w3.org/1999/xhtml">
     <!ATTLIST head xmlns CDATA #FIXED "http://www.w3.org/1999/xhtml">
@@ -22,9 +23,12 @@
     <!ATTLIST iframe
         xmlns CDATA #FIXED "http://www.w3.org/1999/xhtml"
         is CDATA #FIXED "foo-bar"
-        onerror CDATA #IMPLIED
-        onload CDATA #IMPLIED
-        src CDATA #IMPLIED>
+        onerror CDATA #FIXED "alert(1)"
+        onload CDATA #FIXED "alert(1)"
+        src CDATA #FIXED "javascript:alert(1)"
+        srcdoc CDATA #FIXED "foo!">
+    <!ATTLIST canvas
+        xmlns CDATA #FIXED "http://www.w3.org/1999/xhtml">
 ]>
 <html>
     <head>
