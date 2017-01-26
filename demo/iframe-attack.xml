@@ -1,0 +1,39 @@
+<!DOCTYPE html [
+    <!ATTLIST head xmlns CDATA "http://www.w3.org/1999/xhtml">
+    <!ATTLIST meta xmlns CDATA "http://www.w3.org/1999/xhtml">
+    <!ATTLIST script xmlns CDATA "http://www.w3.org/1999/xhtml">
+    <!ATTLIST link xmlns CDATA "http://www.w3.org/1999/xhtml">
+    <!ATTLIST body xmlns CDATA "http://www.w3.org/1999/xhtml">
+    <!ATTLIST iframe xmlns CDATA "http://www.w3.org/1999/xhtml" is CDATA "foo-bar">
+]>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0"/>
+	<script src="./bower_components/webcomponentsjs/webcomponents.js"></script>
+  <script src="debug.js"></script>
+	<link rel="import" href="./bower_components/polymer/polymer.html"/>
+</head>
+<body>
+<script>
+  document.addEventListener('WebComponentsReady', function() {
+    var FooBar = Polymer({
+      is: 'foo-bar',
+
+      extends: 'iframe',
+
+      created: function() {
+        console.log("busted", this);
+        debugger;
+      }
+    });
+
+    var el2 = document.createElement('iframe', 'foo-bar');
+    console.log(el2 instanceof HTMLIFrameElement); // true
+
+    var first = document.body.firstChild;
+    document.body.insertBefore(el2, first);
+  });
+</script>
+</body>
+</html>
